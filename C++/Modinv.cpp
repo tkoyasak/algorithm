@@ -3,6 +3,7 @@ using namespace std;
 
 long long modinv(long long a, long long m) {
   long long b = m, u = 1, v = 0;
+
   while (b) {
     long long t = a / b;
     a -= t * b;
@@ -12,5 +13,6 @@ long long modinv(long long a, long long m) {
   }
   u %= m;
   if (u < 0) u += m;
+
   return u;
 }
