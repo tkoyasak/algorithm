@@ -4,8 +4,8 @@ using namespace std;
 struct LowLink {
   vector<int> aps;
   vector<pair<int, int>> brs;
-
   vector<int> seen, ord, low;
+
   void dfs(const vector<vector<int>>& g, int v, int p = -1) {
     static int time = 0;
     int children = 0;
