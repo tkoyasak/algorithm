@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long modinv(long long a, long long m) {
-  long long b = m, u = 1, v = 0;
+int64_t modinv(int64_t a, int64_t m) {
+  int64_t b = m, u = 1, v = 0;
 
   while (b) {
-    long long t = a / b;
+    int64_t t = a / b;
     a -= t * b;
     swap(a, b);
     u -= t * v;
