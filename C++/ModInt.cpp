@@ -5,7 +5,7 @@ template<int MOD>
 class ModInt {
  public:
   long x;
-  explicit ModInt(long x = 0) : x((x % MOD + MOD) % MOD) {
+  ModInt(long x = 0) : x((x % MOD + MOD) % MOD) {
   }
 
   ModInt& operator+=(const ModInt& other) {
@@ -44,15 +44,15 @@ class ModInt {
     return x != other.x;
   }
 
+  ModInt inv(void) const {
+    return pow(MOD - 2);
+  }
   ModInt pow(long t) const {
     if (!t) return 1;
     ModInt a = pow(t >> 1);
     a *= a;
     if (t & 1) a *= *this;
     return a;
-  }
-  ModInt inv() const {
-    return pow(MOD - 2);
   }
 };
 
