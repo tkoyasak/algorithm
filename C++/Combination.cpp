@@ -16,18 +16,18 @@ class Combination {
   }
 
   T npk(int n, int k) {
-    if (k < 0 || n < k) return 0;
+    if (k < 0 || n < k) return T(0);
     return fac[n] * inv[n - k];
   }
 
   T nck(int n, int k) {
-    if (k < 0 || n < k) return 0;
+    if (k < 0 || n < k) return T(0);
     return fac[n] * inv[n - k] * inv[k];
   }
 
   T nhk(int n, int k) {
-    if (n == 0 && k == 0) return 1;
-    if (n <= 0 || k < 0) return 0;
+    if (n == 0 && k == 0) return T(1);
+    if (n <= 0 || k < 0) return T(0);
     return nck(n + k - 1, k);
   }
 };
