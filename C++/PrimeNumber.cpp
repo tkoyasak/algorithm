@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Sieve of eratosthenes to find prime numbers in range [1,n]
 vector<bool> prime_number(int n) {
   vector<bool> res(n + 1, true);
 

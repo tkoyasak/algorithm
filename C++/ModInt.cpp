@@ -5,8 +5,7 @@ template<int MOD>
 class ModInt {
  public:
   long x;
-  ModInt(long x = 0) : x((x % MOD + MOD) % MOD) {
-  }
+  ModInt(long x = 0) : x((x % MOD + MOD) % MOD) {}
 
   ModInt& operator+=(const ModInt& other) {
     if ((x += other.x) >= MOD) x -= MOD;
@@ -56,8 +55,8 @@ class ModInt {
   }
 };
 
-template<int MOD> ostream& operator<<(ostream& os, const ModInt<MOD>& ans) {
-  return os << ans.x;
+template<int MOD> ostream& operator<<(ostream& os, const ModInt<MOD>& val) {
+  return os << val.x;
 }
 
 typedef ModInt<1000000007> mint;
