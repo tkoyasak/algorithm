@@ -1,31 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct UnionFind {
-  vector<int> p;
+class UnionFind {
+ private:
+  vector<int> par;
 
-  UnionFind(int n): p(n, -1) {}
+ public:
+  explicit UnionFind(int n): par(n, -1) {}
 
-  int find(int x) {
-    if (p[x] < 0) return x;
-    else return p[x] = find(p[x]);
+  int root(int x) {
+    if (par[x] < 0) return x;
+    else return par[x] = root(par[x]);
   }
 
   bool unite(int x, int y) {
-    x = find(x);
-    y = find(y);
+    x = root(x);
+    y = root(y);
     if (x == y) return false;
-    if (p[x] > p[y]) swap(x, y);
-    p[x] += p[y];
-    p[y] = x;
+    if (par[x] > par[y]) swap(x, y);
+    par[x] += par[y];
+    par[y] = x;
     return true;
   }
 
   bool same(int x, int y) {
-    return find(x) == find(y);
+    return root(x) == root(y);
   }
 
   int size(int x) {
-    return -p[find(x)];
+    return -par[root(x)];
   }
 };
