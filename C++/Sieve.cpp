@@ -42,4 +42,3 @@ class Sieve {
     return res;
   }
 };
-
