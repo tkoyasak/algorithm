@@ -1,17 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct FloydWarshall {
+class FloydWarshall {
+ private:
   const long INF = 1LL << 60;
   int v;
   vector<vector<long>> d;
 
+ public:
   explicit FloydWarshall(int v) : v(v), d(v, vector<long>(v, INF)) {
-    for (int i = 0; i < v; i++) d[i][i] = 0;
+    for (int i = 0; i < v; ++i) d[i][i] = 0;
   }
 
-  void add_edge(int from, int to, long w) {
-    d[from][to] = w;
+  void add_edge(int from, int to, long cost) {
+    d[from][to] = cost;
   }
 
   void solve(void) {
