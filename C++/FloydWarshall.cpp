@@ -4,16 +4,21 @@ using namespace std;
 class FloydWarshall {
  private:
   const long INF = 1LL << 60;
-  int v;
+  int v, e;
   vector<vector<long>> dp;
 
  public:
-  explicit FloydWarshall(int v) : v(v), dp(v, vector<long>(v, INF)) {
+  explicit FloydWarshall(int v, int e) : v(v), e(e), dp(v, vector<long>(v, INF)) {
     for (int i = 0; i < v; ++i) dp[i][i] = 0;
   }
 
-  void add_edge(int from, int to, long cost) {
-    dp[from][to] = cost;
+  void input(void) {
+    for (int i = 0; i < e; ++i) {
+      int from, to;
+      long cost;
+      cin >> from >> to >> cost;
+      dp[from][to] = cost;
+    }
   }
 
   void solve(void) {
@@ -27,9 +32,5 @@ class FloydWarshall {
     for (int i = 0; i < v; ++i)
       if (dp[i][i] < 0) return true;
     return false;
-  }
-
-  vector<vector<long>> get_path(void) {
-    return dp;
   }
 };
