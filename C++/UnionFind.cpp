@@ -10,7 +10,7 @@ class UnionFind {
 
   int root(int x) {
     if (par[x] < 0) return x;
-    else return par[x] = root(par[x]);
+    return par[x] = root(par[x]);
   }
 
   bool unite(int x, int y) {
