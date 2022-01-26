@@ -11,14 +11,14 @@ class Edge {
 class BellmanFord {
  private:
   const long INF = 1LL << 60;
-  int v, e;
+  int v;
   vector<long> dp;
   vector<Edge> es;
 
  public:
-  explicit BellmanFord(int v, int e) : v(v), e(e), dp(v, INF) {}
+  explicit BellmanFord(int v) : v(v), dp(v, INF) {}
 
-  void input(void) {
+  void input(int e) {
     for (int i = 0; i < e; ++i) {
       int from, to;
       long cost;
@@ -27,7 +27,7 @@ class BellmanFord {
     }
   }
 
-  bool solve(int s, int v, int e) {
+  bool solve(int s, int v) {
     dp[s] = 0;
     for (int i = 0; i < v; ++i) {
       for (auto u : es) {
