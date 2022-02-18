@@ -16,7 +16,7 @@ class BellmanFord {
   vector<Edge> es;
 
  public:
-  explicit BellmanFord(int v) : v(v), dp(v, INF) {}
+  explicit BellmanFord(int v) : v(v) {}
 
   void input(int e) {
     for (int i = 0; i < e; ++i) {
@@ -28,6 +28,7 @@ class BellmanFord {
   }
 
   bool solve(int s, int v) {
+    dp.assign(v, INF);
     dp[s] = 0;
     for (int i = 0; i < v; ++i) {
       for (auto u : es) {
@@ -39,5 +40,9 @@ class BellmanFord {
       }
     }
     return true;
+  }
+
+  void output(void) {
+    //
   }
 };
