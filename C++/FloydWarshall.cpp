@@ -32,6 +32,10 @@ class FloydWarshall {
     }
   }
 
+  void output(void) {
+    //
+  }
+
   bool negative(void) {
     for (int i = 0; i < v; ++i)
       if (dp[i][i] < 0) return true;
