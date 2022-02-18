@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<pair<int, int>> run_length_encoding(vector<int> arr) {
+template<class T>
+vector<pair<int, int>> run_length_encoding(T& arr) {
   vector<pair<int, int>> res;
 
   int m = arr.size(), cnt = 1;
