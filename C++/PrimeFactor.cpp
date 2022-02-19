@@ -1,16 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-map<long, int> prime_factor(long n) {
-  map<long, int> res;
+vector<pair<long, int>> prime_factor(long n) {
+  vector<pair<long, int>> res;
 
   for (long i = 2; i * i <= n; ++i) {
+    int exp = 0;
     while (n % i == 0) {
-      res[i]++;
       n /= i;
+      exp++;
     }
+    if (exp) res.emplace_back(i, exp);
   }
-  if (n > 1) res[n]++;
+  if (n > 1) res.emplace_back(n, 1);
 
   return res;
 }
