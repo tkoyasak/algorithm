@@ -1,13 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 class Dijkstra {
  private:
-  const long INF = 1LL << 60;
+  const ll INF = 1LL << 60;
   int v;
-  vector<long> dp;
+  vector<ll> dp;
   vector<int> prev;
-  vector<vector<pair<int, long>>> es;
+  vector<vector<pair<int, ll>>> es;
 
  public:
   explicit Dijkstra(int v) : v(v), es(v) {}
@@ -15,7 +16,7 @@ class Dijkstra {
   void input(int e) {
     for (int i = 0; i < e; ++i) {
       int from, to;
-      long cost;
+      ll cost;
       cin >> from >> to >> cost;
       es[from].emplace_back(to, cost);
     }
@@ -24,14 +25,14 @@ class Dijkstra {
   void solve(int s) {
     dp.assign(v, INF);
     prev.assign(v, -1);
-    priority_queue<pair<long, int>, vector<pair<long, int>>, greater<pair<long, int>>> q;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
     dp[s] = 0;
     q.emplace(dp[s], s);
     while (!q.empty()) {
       auto [d, cur] = q.top(); q.pop();
       if (dp[cur] < d) continue;
       for (auto u : es[cur]) {
-        long cost = dp[cur] + u.second;
+        ll cost = dp[cur] + u.second;
         if (dp[u.first] > cost) {
           dp[u.first] = cost;
           prev[u.first] = cur;

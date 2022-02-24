@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 template<class T>
 vector<pair<int, int>> run_length_encoding(T& arr) {

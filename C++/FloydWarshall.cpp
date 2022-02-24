@@ -1,21 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 class FloydWarshall {
  private:
-  const long INF = 1LL << 60;
+  const ll INF = 1LL << 60;
   int v;
-  vector<vector<long>> dp;
+  vector<vector<ll>> dp;
 
  public:
-  explicit FloydWarshall(int v) : v(v), dp(v, vector<long>(v, INF)) {
+  explicit FloydWarshall(int v) : v(v), dp(v, vector<ll>(v, INF)) {
     for (int i = 0; i < v; ++i) dp[i][i] = 0;
   }
 
   void input(int e) {
     for (int i = 0; i < e; ++i) {
       int from, to;
-      long cost;
+      ll cost;
       cin >> from >> to >> cost;
       dp[from][to] = cost;
     }

@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 class Edge {
  public:
   int from, to;
-  long cost;
-  explicit Edge(int from, int to, long cost) : from(from), to(to), cost(cost) {}
+  ll cost;
+  explicit Edge(int from, int to, ll cost) : from(from), to(to), cost(cost) {}
 };
 
 class BellmanFord {
  private:
-  const long INF = 1LL << 60;
+  const ll INF = 1LL << 60;
   int v;
-  vector<long> dp;
+  vector<ll> dp;
   vector<Edge> es;
 
  public:
@@ -21,7 +22,7 @@ class BellmanFord {
   void input(int e) {
     for (int i = 0; i < e; ++i) {
       int from, to;
-      long cost;
+      ll cost;
       cin >> from >> to >> cost;
       es.emplace_back(from, to, cost);
     }

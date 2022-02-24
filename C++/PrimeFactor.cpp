@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
-vector<pair<long, int>> prime_factor(long n) {
-  vector<pair<long, int>> res;
+vector<pair<ll, int>> prime_factor(ll n) {
+  vector<pair<ll, int>> res;
 
-  for (long i = 2; i * i <= n; ++i) {
+  for (ll i = 2; i * i <= n; ++i) {
     int exp = 0;
     while (n % i == 0) {
       n /= i;
