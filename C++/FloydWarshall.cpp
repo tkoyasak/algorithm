@@ -6,20 +6,12 @@ class FloydWarshall {
  private:
   const ll INF = 1LL << 60;
   int v;
+ public:
   vector<vector<ll>> dp;
 
  public:
   explicit FloydWarshall(int v) : v(v), dp(v, vector<ll>(v, INF)) {
     for (int i = 0; i < v; ++i) dp[i][i] = 0;
-  }
-
-  void input(int e) {
-    for (int i = 0; i < e; ++i) {
-      int from, to;
-      ll cost;
-      cin >> from >> to >> cost;
-      dp[from][to] = cost;
-    }
   }
 
   void solve(void) {
@@ -31,10 +23,6 @@ class FloydWarshall {
         }
       }
     }
-  }
-
-  void output(void) {
-    //
   }
 
   bool negative(void) {

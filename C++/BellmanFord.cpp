@@ -13,20 +13,12 @@ class BellmanFord {
  private:
   const ll INF = 1LL << 60;
   int v;
+ public:
   vector<ll> dp;
   vector<Edge> es;
 
  public:
   explicit BellmanFord(int v) : v(v) {}
-
-  void input(int e) {
-    for (int i = 0; i < e; ++i) {
-      int from, to;
-      ll cost;
-      cin >> from >> to >> cost;
-      es.emplace_back(from, to, cost);
-    }
-  }
 
   bool solve(int s, int v) {
     dp.assign(v, INF);
@@ -41,9 +33,5 @@ class BellmanFord {
       }
     }
     return true;
-  }
-
-  void output(void) {
-    //
   }
 };

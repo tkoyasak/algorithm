@@ -6,21 +6,13 @@ class Dijkstra {
  private:
   const ll INF = 1LL << 60;
   int v;
-  vector<ll> dp;
   vector<int> prev;
+ public:
+  vector<ll> dp;
   vector<vector<pair<int, ll>>> es;
 
  public:
   explicit Dijkstra(int v) : v(v), es(v) {}
-
-  void input(int e) {
-    for (int i = 0; i < e; ++i) {
-      int from, to;
-      ll cost;
-      cin >> from >> to >> cost;
-      es[from].emplace_back(to, cost);
-    }
-  }
 
   void solve(int s) {
     dp.assign(v, INF);
@@ -40,10 +32,6 @@ class Dijkstra {
         }
       }
     }
-  }
-
-  void output(void) {
-    // 
   }
 
   vector<int> get_path(int t) {
