@@ -4,7 +4,7 @@ using ll = long long;
 
 template<int N>
 class Sieve {
- private:
+ public:
   vector<bool> isprime;
   vector<int> primes, min_factor;
 
@@ -20,10 +20,6 @@ class Sieve {
         if (min_factor[j] == j) min_factor[j] = i;
       }
     }
-  }
-
-  vector<int> prime_number(void) {
-    return primes;
   }
 
   vector<pair<int, int>> prime_factor(int n) {
