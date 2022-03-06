@@ -77,8 +77,7 @@ using pdd=pair<double,double>; using vpdd=vector<pdd>;
 #endif
 
 int	main(void)
-{
-  NYAN;
+{   NYAN;
 
   
 }
