@@ -13,7 +13,7 @@ using namespace std;
 // using namespace atcoder;
 
 const int inf=1e9+10;
-const long long INF=1e18;
+const long long infl=(long long)1e18+10LL;
 // const int mod=998244353;
 // const int mod=1e9+7;
 

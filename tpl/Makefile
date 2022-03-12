@@ -6,8 +6,8 @@ all:
 	$(CC) -o $(NAME) test.cpp
 	./$(NAME)
 
-clean:
-	$(RM) -r $(NAME) contest
+clean: tpl
+	$(RM) -r *.out contest
 
 tpl:
 	cp -f tpl.cpp test.cpp
