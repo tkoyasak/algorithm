@@ -1,23 +1,24 @@
-#include <bits/stdc++.h>
-using namespace std;
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
 // #pragma GCC optimize("unroll-loops")
 
-// #include <atcoder/all>
-// #include <atcoder/dsu>
-// #include <atcoder/segtree>
-// #include <atcoder/lazysegtree>
-// #include <atcoder/fenwicktree>
-// #include <atcoder/modint>
-// using namespace atcoder;
+#include <bits/stdc++.h>
+#include <atcoder/all>
+using namespace std;
+using namespace atcoder;
+using mint=modint;
 
 const int inf=1e9+10;
 const long long infl=(long long)1e18+10LL;
-// const int mod=998244353;
+const int mod=998244353;
 // const int mod=1e9+7;
 
 #ifndef MEOW
+
+#define NYAN std::cin.tie(nullptr);\
+             ios_base::sync_with_stdio(false);\
+             std::cout<<fixed<<setprecision(15);\
+             mint::set_mod(mod);
 
 const int di4[4]={1,0,-1,0};
 const int dj4[4]={0,1,0,-1};
@@ -58,9 +59,6 @@ template<class T> inline bool chmax(T& a, T b) {if(a<b){a=b;return(true);}return
 long long modpow(long long x,long long n,long long m) {if(m==1)return(0);long long val=1;while(n){if(n&1){val=(val*x)%m;}x=(x*x)%m;n>>=1;}return(val);}
 long long modinv(long long x,long long m) {return(modpow(x,m-2,m));}
 
-#ifndef MODINT
- #define mint int
-#endif
 using ll=long long; using ull=unsigned long long;
 using vc=vector<char>; using vvc=vector<vc>; using vvvc=vector<vvc>;
 using vi=vector<int>; using vvi=vector<vi>; using vvvi=vector<vvi>;
@@ -73,11 +71,9 @@ using pii=pair<int,int>; using pll=pair<ll,ll>; using pil=pair<int,ll>; using pl
 using vpii=vector<pii>; using vpll=vector<pll>; using vpil=vector<pil>; using vpli=vector<pli>;
 using pdd=pair<double,double>; using vpdd=vector<pdd>;
 
-#define NYAN cin.tie(nullptr);ios_base::sync_with_stdio(false);cout<<fixed<<setprecision(15);
-
 #endif
 
-int	main(void)
+int main(void)
 {   NYAN;
 
   
