@@ -15,10 +15,7 @@ const int mod=998244353;
 
 #ifndef MEOW
 
-#define NYAN std::cin.tie(nullptr);\
-             ios_base::sync_with_stdio(false);\
-             std::cout<<fixed<<setprecision(15);\
-             mint::set_mod(mod);
+#define NYAN std::cin.tie(nullptr);ios_base::sync_with_stdio(false);std::cout<<fixed<<setprecision(15);mint::set_mod(mod);
 
 const int di4[4]={1,0,-1,0};
 const int dj4[4]={0,1,0,-1};
