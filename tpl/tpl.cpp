@@ -3,7 +3,8 @@
 // #pragma GCC optimize("unroll-loops")
 
 #include <bits/stdc++.h>
-#include <atcoder/all>
+// #include <atcoder/all>
+#include <atcoder/modint>
 using namespace std;
 using namespace atcoder;
 using mint=modint;
@@ -38,18 +39,24 @@ const int dj8[8]={0,1,1,1,0,-1,-1,-1};
 #define rev(obj) reverse(all(obj))
 #define YesNo(bool) if(bool){cout<<"Yes"<<endl;}else{cout<<"No"<<endl;}
 
+#define overload5(o1,o2,o3,o4,o5,name,...) name
 #define overload4(o1,o2,o3,o4,name,...) name
 #define rep1(n) for (int rn4wqu22=0;rn4wqu22<(n);++rn4wqu22)
-#define rep2(rn4wqu22,n) for (int rn4wqu22=0;rn4wqu22<(n);++rn4wqu22)
-#define rep3(rn4wqu22,m,n) for (int rn4wqu22=(m);rn4wqu22<(n);++rn4wqu22)
-#define rep4(rn4wqu22,m,n,d) for (int rn4wqu22=(m);rn4wqu22<(n);rn4wqu22+=(d))
+#define rep2(i,n) for (int i=0;i<(n);++i)
+#define rep3(i,m,n) for (int i=(m);i<(n);++i)
+#define rep4(i,m,n,d) for (int i=(m);i<(n);i+=(d))
 #define rep(...) overload4(__VA_ARGS__,rep4,rep3,rep2,rep1)(__VA_ARGS__)
 #define per1(n) for (int rn4wqu22=(n)-1;rn4wqu22>=0;--rn4wqu22)
-#define per2(rn4wqu22,n) for (int rn4wqu22=(n)-1;rn4wqu22>=0;--rn4wqu22)
-#define per3(rn4wqu22,m,n) for (int rn4wqu22=(m)-1;rn4wqu22>=n;--rn4wqu22)
-#define per4(rn4wqu22,m,n,d) for (int rn4wqu22=(m)-1;rn4wqu22>=n;rn4wqu22-=(d))
+#define per2(i,n) for (int i=(n)-1;i>=0;--i)
+#define per3(i,m,n) for (int i=(m)-1;i>=n;--i)
+#define per4(i,m,n,d) for (int i=(m)-1;i>=n;i-=(d))
 #define per(...) overload4(__VA_ARGS__,per4,per3,per2,per1)(__VA_ARGS__)
-#define fore(rn4wqu22,a) for(auto &rn4wqu22:(a))
+#define fore0(a) rep(a.size())
+#define fore1(i,a) for(auto&& i:(a))
+#define fore2(a,b,v) for(auto&& [a,b]:(v))
+#define fore3(a,b,c,v) for(auto&& [a,b,c]:(v))
+#define fore4(a,b,c,d,v) for(auto&& [a,b,c,d]:(v))
+#define fore(...) overload5(__VA_ARGS__, fore4, fore3, fore2, fore1, fore0)(__VA_ARGS__)
 
 template<class T> inline bool chmin(T& a, T b) {if(a>b){a=b;return(true);}return(false);}
 template<class T> inline bool chmax(T& a, T b) {if(a<b){a=b;return(true);}return(false);}
