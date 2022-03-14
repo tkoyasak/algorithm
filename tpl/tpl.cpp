@@ -60,6 +60,7 @@ const int dj8[8]={0,1,1,1,0,-1,-1,-1};
 
 template<class T> inline bool chmin(T& a, T b) {if(a>b){a=b;return(true);}return(false);}
 template<class T> inline bool chmax(T& a, T b) {if(a<b){a=b;return(true);}return(false);}
+template<typename S, typename T> inline long long asum(S l, T r) {if(l>r)return(0);return((long long)(l+r))*(r-l+1)/2;}
 long long modpow(long long x,long long n,long long m) {if(m==1)return(0);long long val=1;while(n){if(n&1){val=(val*x)%m;}x=(x*x)%m;n>>=1;}return(val);}
 long long modinv(long long x,long long m) {return(modpow(x,m-2,m));}
 
